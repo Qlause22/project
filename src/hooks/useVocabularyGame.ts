@@ -66,15 +66,13 @@ export function useVocabularyGame() {
       currentRoundKnownWords,
       currentDeck.length
     );
-    setProgressHistory((prev) =>
-      [
-        ...prev,
-        {
-          round: reviewState.currentRound,
-          percentage: currentProgress,
-        },
-      ].reverse()
-    );
+    setProgressHistory((prev) => [
+      {
+        round: reviewState.currentRound,
+        percentage: currentProgress,
+      },
+      ...prev,
+    ]);
 
     const reviewWords = getReviewWords(
       getRemainingWords(vocabulary, reviewState.knownWords),
