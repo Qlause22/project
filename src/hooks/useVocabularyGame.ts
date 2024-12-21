@@ -52,10 +52,7 @@ export function useVocabularyGame() {
           reviewWords: [...prev.reviewWords, currentWord.id],
         }));
       }
-      console.log(currentIndex, currentDeck);
-      if (currentIndex >= currentDeck.length) {
-        setProgressHistory([]);
-      }
+
       setCurrentIndex((prev) => prev + 1);
     },
     [currentDeck, currentIndex]

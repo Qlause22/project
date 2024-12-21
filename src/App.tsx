@@ -24,6 +24,7 @@ export default function App() {
       <GameHeader
         currentRound={reviewState.currentRound}
         currentRoundKnownWords={currentRoundKnownWords}
+        reviewState={reviewState}
         deckSize={currentDeck.length}
       />
 

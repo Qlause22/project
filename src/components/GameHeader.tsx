@@ -1,16 +1,19 @@
 import React from "react";
 import { ProgressDisplay } from "./ProgressDisplay";
 import { Upload } from "lucide-react";
+import { ReviewState } from "../types/vocabulary";
 
 interface GameHeaderProps {
   currentRound: number;
   currentRoundKnownWords: number[];
+  reviewState: ReviewState;
   deckSize: number;
 }
 
 export function GameHeader({
   currentRound,
   currentRoundKnownWords,
+  reviewState,
   deckSize,
 }: GameHeaderProps) {
   // Function to handle file input
@@ -52,6 +55,7 @@ export function GameHeader({
       <div className="mb-8">
         <ProgressDisplay
           knownWords={currentRoundKnownWords}
+          reviewWords={reviewState}
           totalWords={deckSize}
         />
       </div>
